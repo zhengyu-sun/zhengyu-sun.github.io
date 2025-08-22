@@ -13,6 +13,6 @@ bibtexurl: 'http://szyssssss.github.io/files/superpixel-segmentation.bib'
 ---
 This paper introduces a novel superpixel segmentation method that leverages edge guided local-global attention networks. The approach enhances feature extraction capabilities and improves semantic understanding through advanced convolution techniques and iterative methods. The work contributes to the fields of image edge detection, object detection, and data visualization.
 
-**Keywords:** Superpixel segmentation, Edge enhancement, Local-Global context, Image edge detection, Feature extraction, Convolution, Training, Semantics, Object detection, Circuits and systems, Visualization, Data mining, Iterative methods
+**Keywords:** Superpixel segmentation, Edge enhancement, Feature extraction
 
 **DOI:** 10.1109/TCSVT.2025.3587485
