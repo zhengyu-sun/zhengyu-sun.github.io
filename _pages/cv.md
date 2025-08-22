@@ -13,7 +13,7 @@ Education
 ======
 
 * M.Eng. in Computer Science and Engineering, Nanyang Technological University, 2027 (expected)
-* B.S. in Software Engineering, Shandong University, 2025     
+* B.Eng. in Software Engineering, Shandong University, 2025     
 
 Publications
 ======
