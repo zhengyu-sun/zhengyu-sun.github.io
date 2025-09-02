@@ -41,3 +41,157 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+/* 自定义样式：减小出版物列表的行间距 */
+.list__item {
+  margin-bottom: 1em; /* 减小项目之间的间距 */
+  
+  .archive__item {
+    margin-bottom: 0.5em;
+    
+    p {
+      margin-bottom: 0.3em; /* 减小段落间距 */
+      line-height: 0.3; /* 减小行高 */
+    }
+    
+    .archive__item-title {
+      margin-bottom: 0.2em; /* 减小标题下方间距 */
+    }
+  }
+}
+
+/* 针对出版物页面的特殊优化 */
+.publications .list__item {
+  margin-bottom: 0.8em;
+  
+  .archive__item {
+    padding: 0.5em 0; /* 减小内边距 */
+  }
+}
+
+/* 出版物信息样式优化 */
+.list__item .archive__item {
+  /* 发表位置样式 */
+  p:has(i) {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 0.2em;
+  }
+  
+  /* 作者信息样式 */
+  p:has(strong:contains("Authors")) {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 0.2em;
+    
+    strong {
+      color: #666;
+    }
+  }
+  
+  /* DOI信息样式 */
+  p:has(strong:contains("DOI")) {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 0.2em;
+    
+    strong {
+      color: #666;
+    }
+    
+    /* DOI链接保持原色 */
+    a {
+      color: var(--global-link-color);
+      
+      &:hover {
+        color: var(--global-link-hover-color);
+      }
+    }
+  }
+  
+  /* 底部链接样式（Article Link, Download Slides, Download Bibtex等） */
+  p:last-child {
+    font-size: 0.85em;
+    
+    a {
+      font-size: 1em; /* 相对于父元素的0.85em */
+      color: var(--global-link-color);
+      
+      &:hover {
+        color: var(--global-link-hover-color);
+      }
+    }
+  }
+  
+  /* 包含citation和链接的段落 */
+  p:has(a[href*="paperurl"]),
+  p:has(a[href*="slidesurl"]),
+  p:has(a[href*="bibtexurl"]) {
+    font-size: 0.85em;
+    
+    a {
+      font-size: 1em;
+      color: var(--global-link-color);
+      
+      &:hover {
+        color: var(--global-link-hover-color);
+      }
+    }
+  }
+}
+
+/* 更兼容的选择器方案（如果上面的:has()不支持） */
+.list__item .archive__item {
+  /* 针对出版物集合的特定样式 */
+  &[itemtype="http://schema.org/CreativeWork"] {
+    p {
+      /* 包含venue信息的段落 */
+      &:first-of-type {
+        font-size: 0.85em;
+        color: #666;
+      }
+      
+      /* 包含Authors的段落 */
+      &:nth-of-type(2) {
+        font-size: 0.85em;
+        color: #666;
+        
+        strong {
+          color: #666;
+        }
+      }
+      
+      /* 包含DOI的段落 */
+      &:nth-of-type(3) {
+        font-size: 0.85em;
+        color: #666;
+        
+        strong {
+          color: #666;
+        }
+        
+        a {
+          color: var(--global-link-color);
+          
+          &:hover {
+            color: var(--global-link-hover-color);
+          }
+        }
+      }
+      
+      /* 最后一个段落（通常包含下载链接） */
+      &:last-of-type {
+        font-size: 0.85em;
+        
+        a {
+          font-size: 1em;
+          color: var(--global-link-color);
+          
+          &:hover {
+            color: var(--global-link-hover-color);
+          }
+        }
+      }
+    }
+  }
+}

@@ -45,6 +45,15 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if page.image %}
+          <div class="publication-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.image_caption | default: page.title }}" style="max-width: 100%; height: auto; margin: 20px 0;">
+            {% if page.image_caption %}
+              <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">{{ page.image_caption }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+        
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
